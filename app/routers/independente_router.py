@@ -1,7 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from app.database import SessionLocal
-from app.services.user_service import verificar_login
+from ..database import SessionLocal
+from ..services.user_service import verificar_login
+from ..configuration.config import Configuration as config
 
 router = APIRouter(tags=["verificar"])
 
@@ -19,3 +20,11 @@ def api_verificar_login(data: dict, db: Session = Depends(get_db)):
         raise HTTPException(status_code=400, detail="Login não fornecido")
     existe = verificar_login(db, login)
     return {"existe": existe}
+
+@router.get("/info")
+def get_info():
+    return {
+        "database_url": config.DATABASE_URL,
+        "debug": config.debug,
+        "port": config.port
+    }
