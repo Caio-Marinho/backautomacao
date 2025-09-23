@@ -16,6 +16,8 @@ class UserBase(BaseModel):
 
 class UserCreate(UserBase):
     senha: str
+    ativo: Optional[bool] = None
+    id_do_responsavel: Optional[int] = None
 
 class UserResponse(BaseModel):
     id: int
