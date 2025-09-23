@@ -1,6 +1,6 @@
 from pydantic import BaseModel
-from ..schemas.cargo import CargoUserResponse
-from ..schemas.area import AreaUserResponse
+from .cargo import CargoUserResponse
+from .area import AreaUserResponse
 
 
 class PerfilUserBase(BaseModel):

@@ -1,7 +1,6 @@
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship, backref
-
-from app.database import Base
+from ..database import Base
 
 class Cargo(Base):
     __tablename__ = "cargos"

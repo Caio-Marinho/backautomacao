@@ -1,9 +1,9 @@
 from datetime import datetime
 from typing import Optional
 from pydantic import BaseModel
-from ..schemas.perfil  import PerfilUserResponse
-from ..schemas.contato import ContatoUserResponse
-from ..schemas.credencial import CredencialUserResponse
+from .perfil  import PerfilUserResponse
+from .contato import ContatoUserResponse
+from .credencial import CredencialUserResponse
 
 
 class UserBase(BaseModel):

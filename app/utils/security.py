@@ -3,7 +3,7 @@ import os
 import base64
 
 def gerar_salt() -> str:
-    return base64.urlsafe_b64encode(os.urandom(16)).decode()
+    return base64.urlsafe_b64encode(os.urandom(24)).decode()
 
 def hash_senha(senha: str, salt: str) -> str:
     return hashlib.sha256(f"{senha}{salt}".encode()).hexdigest()

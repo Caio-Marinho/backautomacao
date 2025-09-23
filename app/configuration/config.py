@@ -2,6 +2,7 @@ from pydantic_settings import BaseSettings
 
 class Configuration(BaseSettings):
     DATABASE_URL: str
+    FUSO_LOCAL:str
     debug: bool = False
     port: int = 5000
 
